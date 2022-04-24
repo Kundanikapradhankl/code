@@ -5,6 +5,7 @@ int main() {
   int tempChoice;
   int currencyChoice;
   int massChoice;
+  int lengthChoice;
   int F; // User inputted Fahreinheit;
   int C; // User inputted Celsius;
   int userinputUSDtoEuro; // User inputted for USD to EURO;
@@ -14,6 +15,11 @@ int main() {
   int Gram; // User inputted for Gram;
   int fahrenheitToCelcius; // variable that stores the converted F->C;
   int celciusToFahrenheit; // variable that stores the converted C->F;
+  float metre;//user inputted the length in metres;
+  float km;//variable that stores the converted m-->km;
+  double inch;//variable that stores the converted m-->inch;
+  double feet;//variable that stores the converted m-->feet;
+  float centimetre;//variable that stores the converted m-->cm;
   float USDtoEURO ; // varaible that stores the converted USD->EURO;
   float USDtoJPY; // stores the converted USD->JPY;
   float USDtoRMB; // stores the converted USD->RMB;
@@ -22,7 +28,7 @@ int main() {
   
   printf("Welcome to Unit Converter! \n");
   printf("Here is a list of conversation to choose from: \n");
-  printf("Temperature(T),Currency(C),Mass(M) \n");
+  printf("Temperature(T),Currency(C),Mass(M),Length(L) \n");
   printf("Please enter the letter you want to convert.\n");
   scanf("%c",&category);
   
@@ -94,8 +100,43 @@ int main() {
           gramsToPounds = Gram * 0.00220462;
           printf("Pounds: %.2f",gramsToPounds);
       }
-      else 
+    else 
         printf("Please enter the correct choice. \n");
-   }
+      }
+   else if(category=='L'){
+      printf("Welcome to Length Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for centimetres to km. \n");
+      printf("Enter 2 for centimetres to metre. \n");
+      printf("Enter 3 for centimetres to inch. \n");
+      printf("Enter 4 for centimetres to feet. \n");
+      scanf("%d",&massChoice);
+      if(massChoice == 1){
+          printf("Please enter the length in centimetres: \n");
+          scanf("%f",&centimetre);
+          km=centimetre/1000.0;
+          printf("Length in Kilometer = %.2f km", km);
+      }
+      else if(massChoice == 2){
+          printf("Please enter the length in centimetres: \n");
+          scanf("%f",&centimetre);
+          metre=centimetre/100.0;
+          printf("Length in meter = %.2f m", metre);
+      }
+      else if(massChoice == 3){
+          printf("Please enter the length in centimetres: \n");
+          scanf("%f",&centimetre);
+          feet=0.0328 *centimetre;
+          printf("Length in feet = %.2lf feet", feet);
+      }
+      else if(massChoice == 4){
+          printf("Please enter the length in centimetres: \n");
+          scanf("%f",&centimetre);
+          inch=0.3937 *centimetre;
+          printf("Length in inch = %.2lf inch", inch);
+      }
+   else 
+        printf("Please enter the correct choice. \n");
+      }
   return 0;
 }
